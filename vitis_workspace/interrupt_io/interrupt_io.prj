@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="interrupt_io" location="/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io" platform="/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hardware_interrupt.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="interrupt_io_system" sysConfig="hardware_interrupt" runtime="cpp" cpu="standalone_microblaze_0" cpuInstance="microblaze_0" os="standalone" mssSignature="4b2bbec71a22b83759aa0cee07cbe3f6">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.958032183" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.262586239" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

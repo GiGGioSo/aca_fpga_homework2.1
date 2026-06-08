@@ -1,0 +1,14 @@
+15:11:47 DEBUG : Logs will be stored at '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/IDE.log'.
+15:11:49 INFO  : Platform repository initialization has completed.
+15:11:49 INFO  : Launching XSCT server: xsct -n  -interactive /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/temp_xsdb_launch_script.tcl
+15:11:49 INFO  : Registering command handlers for Vitis TCF services
+15:11:51 INFO  : XSCT server has started successfully.
+15:11:51 INFO  : plnx-install-location is set to ''
+15:11:51 INFO  : Successfully done setting XSCT server connection channel  
+15:11:51 INFO  : Successfully done query RDI_DATADIR 
+15:11:51 INFO  : Successfully done setting workspace for the tool. 
+15:13:28 INFO  : Result from executing command 'getProjects': hardware_interrupt
+15:13:28 INFO  : Result from executing command 'getPlatforms': 
+15:13:28 WARN  : An unexpected exception occurred in the module 'platform project logging'
+15:13:29 INFO  : Platform 'hardware_interrupt' is added to custom repositories.
+15:13:33 INFO  : Platform 'hardware_interrupt' is added to custom repositories.
