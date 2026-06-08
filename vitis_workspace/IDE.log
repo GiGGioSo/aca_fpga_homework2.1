@@ -12,3 +12,523 @@
 15:13:28 WARN  : An unexpected exception occurred in the module 'platform project logging'
 15:13:29 INFO  : Platform 'hardware_interrupt' is added to custom repositories.
 15:13:33 INFO  : Platform 'hardware_interrupt' is added to custom repositories.
+15:26:44 INFO  : Result from executing command 'getProjects': hardware_interrupt
+15:26:44 INFO  : Result from executing command 'getPlatforms': hardware_interrupt|/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hardware_interrupt.xpfm
+15:26:47 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:27:23 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:44:32 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:44:54 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:45:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:45:16 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+15:45:16 INFO  : 'jtag frequency' command is executed.
+15:45:16 INFO  : Context for 'APU' is selected.
+15:45:16 INFO  : System reset is completed.
+15:45:19 INFO  : 'after 3000' command is executed.
+15:45:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+15:45:22 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+15:45:22 INFO  : Context for 'APU' is selected.
+15:45:22 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+15:45:22 INFO  : 'configparams force-mem-access 1' command is executed.
+15:45:22 INFO  : Context for 'APU' is selected.
+15:45:22 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+15:45:22 INFO  : 'ps7_init' command is executed.
+15:45:22 INFO  : 'ps7_post_config' command is executed.
+15:45:22 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+15:45:22 INFO  : Context for processor 'microblaze_0' is selected.
+15:45:22 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+15:45:22 INFO  : 'configparams force-mem-access 0' command is executed.
+15:45:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:45:22 INFO  : Context for processor 'microblaze_0' is selected.
+15:45:22 INFO  : 'con' command is executed.
+15:45:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+15:45:22 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+15:45:44 INFO  : Disconnected from the channel tcfchan#2.
+15:45:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:45:45 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+15:45:45 INFO  : 'jtag frequency' command is executed.
+15:45:47 INFO  : Context for 'APU' is selected.
+15:45:47 INFO  : System reset is completed.
+15:45:50 INFO  : 'after 3000' command is executed.
+15:45:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+15:45:52 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+15:45:52 INFO  : Context for 'APU' is selected.
+15:45:52 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+15:45:52 INFO  : 'configparams force-mem-access 1' command is executed.
+15:45:52 INFO  : Context for 'APU' is selected.
+15:45:52 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+15:45:52 INFO  : 'ps7_init' command is executed.
+15:45:52 INFO  : 'ps7_post_config' command is executed.
+15:45:52 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+15:45:52 INFO  : Context for processor 'microblaze_0' is selected.
+15:45:53 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+15:45:53 INFO  : 'configparams force-mem-access 0' command is executed.
+15:45:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:45:53 INFO  : Context for processor 'microblaze_0' is selected.
+15:45:53 INFO  : 'con' command is executed.
+15:45:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+15:45:53 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+15:47:57 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:48:06 INFO  : Disconnected from the channel tcfchan#3.
+15:48:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:48:07 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+15:48:07 INFO  : 'jtag frequency' command is executed.
+15:48:08 INFO  : Context for 'APU' is selected.
+15:48:08 INFO  : System reset is completed.
+15:48:11 INFO  : 'after 3000' command is executed.
+15:48:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+15:48:13 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+15:48:13 INFO  : Context for 'APU' is selected.
+15:48:13 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+15:48:13 INFO  : 'configparams force-mem-access 1' command is executed.
+15:48:13 INFO  : Context for 'APU' is selected.
+15:48:13 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+15:48:13 INFO  : 'ps7_init' command is executed.
+15:48:13 INFO  : 'ps7_post_config' command is executed.
+15:48:13 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+15:48:13 INFO  : Context for processor 'microblaze_0' is selected.
+15:48:14 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+15:48:14 INFO  : 'configparams force-mem-access 0' command is executed.
+15:48:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:48:14 INFO  : Context for processor 'microblaze_0' is selected.
+15:48:14 INFO  : 'con' command is executed.
+15:48:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+15:48:14 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+15:49:02 INFO  : Disconnected from the channel tcfchan#4.
+15:49:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:49:03 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+15:49:03 INFO  : 'jtag frequency' command is executed.
+15:49:03 INFO  : Context for 'APU' is selected.
+15:49:03 INFO  : System reset is completed.
+15:49:06 INFO  : 'after 3000' command is executed.
+15:49:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+15:49:09 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+15:49:09 INFO  : Context for 'APU' is selected.
+15:49:09 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+15:49:09 INFO  : 'configparams force-mem-access 1' command is executed.
+15:49:09 INFO  : Context for 'APU' is selected.
+15:49:09 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+15:49:09 INFO  : 'ps7_init' command is executed.
+15:49:09 INFO  : 'ps7_post_config' command is executed.
+15:49:09 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+15:49:09 INFO  : Context for processor 'microblaze_0' is selected.
+15:49:09 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+15:49:09 INFO  : 'configparams force-mem-access 0' command is executed.
+15:49:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:49:09 INFO  : Context for processor 'microblaze_0' is selected.
+15:49:09 INFO  : 'con' command is executed.
+15:49:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+15:49:09 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+15:56:16 INFO  : Disconnected from the channel tcfchan#5.
+15:56:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:56:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+15:56:17 INFO  : 'jtag frequency' command is executed.
+15:56:18 INFO  : Context for 'APU' is selected.
+15:56:18 INFO  : System reset is completed.
+15:56:21 INFO  : 'after 3000' command is executed.
+15:56:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+15:56:23 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+15:56:23 INFO  : Context for 'APU' is selected.
+15:56:23 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+15:56:23 INFO  : 'configparams force-mem-access 1' command is executed.
+15:56:23 INFO  : Context for 'APU' is selected.
+15:56:23 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+15:56:24 INFO  : 'ps7_init' command is executed.
+15:56:24 INFO  : 'ps7_post_config' command is executed.
+15:56:24 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+15:56:24 INFO  : Context for processor 'microblaze_0' is selected.
+15:56:24 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+15:56:24 INFO  : 'configparams force-mem-access 0' command is executed.
+15:56:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:56:24 INFO  : Context for processor 'microblaze_0' is selected.
+15:56:24 INFO  : 'con' command is executed.
+15:56:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+15:56:24 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+15:56:27 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:57:08 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:58:18 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:59:11 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:59:45 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+15:59:50 INFO  : Disconnected from the channel tcfchan#6.
+15:59:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:59:51 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+15:59:51 ERROR : port closed
+15:59:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+15:59:51 ERROR : port closed
+16:00:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:00:27 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+16:00:27 INFO  : 'jtag frequency' command is executed.
+16:00:27 INFO  : Context for 'APU' is selected.
+16:00:27 INFO  : System reset is completed.
+16:00:30 INFO  : 'after 3000' command is executed.
+16:00:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+16:00:32 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+16:00:32 INFO  : Context for 'APU' is selected.
+16:00:32 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+16:00:32 INFO  : 'configparams force-mem-access 1' command is executed.
+16:00:32 INFO  : Context for 'APU' is selected.
+16:00:32 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+16:00:32 INFO  : 'ps7_init' command is executed.
+16:00:32 INFO  : 'ps7_post_config' command is executed.
+16:00:32 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+16:00:32 INFO  : Context for processor 'microblaze_0' is selected.
+16:00:33 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+16:00:33 INFO  : 'configparams force-mem-access 0' command is executed.
+16:00:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:00:33 INFO  : Context for processor 'microblaze_0' is selected.
+16:00:33 INFO  : 'con' command is executed.
+16:00:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+16:00:33 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+16:03:56 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:04:05 INFO  : Disconnected from the channel tcfchan#7.
+16:04:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:04:20 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+16:04:20 INFO  : 'jtag frequency' command is executed.
+16:04:20 INFO  : Context for 'APU' is selected.
+16:04:20 INFO  : System reset is completed.
+16:04:23 INFO  : 'after 3000' command is executed.
+16:04:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+16:04:25 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+16:04:25 INFO  : Context for 'APU' is selected.
+16:04:25 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+16:04:25 INFO  : 'configparams force-mem-access 1' command is executed.
+16:04:25 INFO  : Context for 'APU' is selected.
+16:04:25 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+16:04:25 INFO  : 'ps7_init' command is executed.
+16:04:25 INFO  : 'ps7_post_config' command is executed.
+16:04:25 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+16:04:25 INFO  : 'configparams force-mem-access 0' command is executed.
+16:04:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:04:25 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+16:04:40 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:05:20 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:05:43 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:05:47 INFO  : Disconnected from the channel tcfchan#8.
+16:05:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:05:49 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+16:05:49 ERROR : port closed
+16:05:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:05:49 ERROR : port closed
+16:06:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:06:19 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+16:06:19 INFO  : 'jtag frequency' command is executed.
+16:06:19 INFO  : Context for 'APU' is selected.
+16:06:19 INFO  : System reset is completed.
+16:06:22 INFO  : 'after 3000' command is executed.
+16:06:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+16:06:24 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+16:06:24 INFO  : Context for 'APU' is selected.
+16:06:24 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+16:06:24 INFO  : 'configparams force-mem-access 1' command is executed.
+16:06:24 INFO  : Context for 'APU' is selected.
+16:06:24 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+16:06:24 INFO  : 'ps7_init' command is executed.
+16:06:24 INFO  : 'ps7_post_config' command is executed.
+16:06:24 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+16:06:24 INFO  : Context for processor 'microblaze_0' is selected.
+16:06:24 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+16:06:25 INFO  : 'configparams force-mem-access 0' command is executed.
+16:06:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:06:25 INFO  : Context for processor 'microblaze_0' is selected.
+16:06:25 INFO  : 'con' command is executed.
+16:06:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+16:06:25 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+16:07:10 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:07:13 INFO  : Disconnected from the channel tcfchan#9.
+16:07:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:07:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+16:07:14 INFO  : 'jtag frequency' command is executed.
+16:07:15 INFO  : Context for 'APU' is selected.
+16:07:15 INFO  : System reset is completed.
+16:07:18 INFO  : 'after 3000' command is executed.
+16:07:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+16:07:20 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+16:07:20 INFO  : Context for 'APU' is selected.
+16:07:20 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+16:07:20 INFO  : 'configparams force-mem-access 1' command is executed.
+16:07:20 INFO  : Context for 'APU' is selected.
+16:07:20 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+16:07:20 INFO  : 'ps7_init' command is executed.
+16:07:20 INFO  : 'ps7_post_config' command is executed.
+16:07:20 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+16:07:20 INFO  : Context for processor 'microblaze_0' is selected.
+16:07:21 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+16:07:21 INFO  : 'configparams force-mem-access 0' command is executed.
+16:07:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:07:21 INFO  : Context for processor 'microblaze_0' is selected.
+16:07:21 INFO  : 'con' command is executed.
+16:07:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+16:07:21 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+16:09:17 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:09:29 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:12:18 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:12:26 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:12:50 INFO  : Disconnected from the channel tcfchan#10.
+16:12:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:12:51 INFO  : Jtag cable 'Digilent Zybo Z7 210351BA1DB5A' is selected.
+16:12:51 INFO  : 'jtag frequency' command is executed.
+16:12:52 INFO  : Context for 'APU' is selected.
+16:12:52 INFO  : System reset is completed.
+16:12:55 INFO  : 'after 3000' command is executed.
+16:12:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}' command is executed.
+16:12:57 INFO  : Device configured successfully with "/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit"
+16:12:57 INFO  : Context for 'APU' is selected.
+16:12:57 INFO  : Hardware design and registers information is loaded from '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa'.
+16:12:57 INFO  : 'configparams force-mem-access 1' command is executed.
+16:12:57 INFO  : Context for 'APU' is selected.
+16:12:57 INFO  : Sourcing of '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl' is done.
+16:12:57 INFO  : 'ps7_init' command is executed.
+16:12:57 INFO  : 'ps7_post_config' command is executed.
+16:12:57 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+16:12:57 INFO  : Context for processor 'microblaze_0' is selected.
+16:12:58 INFO  : The application '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf' is downloaded to processor 'microblaze_0'.
+16:12:58 INFO  : 'configparams force-mem-access 0' command is executed.
+16:12:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BA1DB5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BA1DB5A-23727093-0"}
+fpga -file /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/bitstream/hardware_interrupt.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/hw/hardware_interrupt.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:12:58 INFO  : Context for processor 'microblaze_0' is selected.
+16:12:58 INFO  : 'con' command is executed.
+16:12:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+16:12:58 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+16:18:46 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:20:29 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:20:56 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:26:13 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:26:36 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:28:27 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:32:55 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:34:08 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:34:32 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:34:32 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:34:33 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:34:33 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:34:44 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:36:14 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...
+16:36:32 INFO  : Checking for BSP changes to sync application flags for project 'interrupt_io'...

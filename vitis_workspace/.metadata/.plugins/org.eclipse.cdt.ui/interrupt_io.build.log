@@ -1,0 +1,17 @@
+16:36:32 **** Incremental Build of configuration Debug for project interrupt_io ****
+make all 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/sw/hardware_interrupt/standalone_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: interrupt_io.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/sw/hardware_interrupt/standalone_microblaze_0/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "interrupt_io.elf" ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+/opt/Xilinx/Vitis/2024.2/gnu/microblaze/lin/x86_64-oesdk-linux/usr/bin/microblaze-xilinx-elf/microblaze-xilinx-elf-ld.real: /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/sw/hardware_interrupt/standalone_microblaze_0/bsplib/lib/libxil.a(microblaze_interrupt_handler.o): in function `__interrupt_handler':
+/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/microblaze_0/standalone_microblaze_0/bsp/microblaze_0/libsrc/standalone_v9_2/src/microblaze_interrupt_handler.c:65: multiple definition of `_interrupt_handler'; ./src/main.o:/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/../src/main.c:46: first defined here
+collect2.real: error: ld returned 1 exit status
+make: *** [makefile:38: interrupt_io.elf] Error 1
+
+16:36:32 Build Finished (took 215ms)
+

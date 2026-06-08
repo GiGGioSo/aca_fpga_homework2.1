@@ -19,3 +19,4 @@ platform active {hardware_interrupt}
 domain active {zynq_fsbl}
 domain active {standalone_microblaze_0}
 platform generate -quick
+platform generate
