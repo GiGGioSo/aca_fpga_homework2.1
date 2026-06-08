@@ -33,8 +33,7 @@
 // NOTE: Define interrupt enable bit for the UART module
 #define UART_INTERRUPT_ENABLED 1 << 4
 
-// More information in MicroBlaze product guide!
-void ISR() __attribute__((interrupt_handler));
+void ISR(void *CallbackRef);
 u32 count=0;
 
 bool get_flag(u32 mask) {
@@ -42,27 +41,46 @@ bool get_flag(u32 mask) {
     return ((status & mask) != 0) ? true : false;
 }
 
-void ISR(void)
+void ISR(void *CallbackRef)
 {
-	// TODO: Service the interrupt.
-    printf("ISR called!");
+    (void)CallbackRef;
+
+    if (!get_flag(RX_FIFO_VALID_DATA)) return;
+
+    // read character
+    u32 raw = XIo_In32(UART_BASE_ADDRESS + UART_RX_FIFO); 
+    char c = (char) (raw & 0xff);
+
+    // wait for output queue for NOT be full
+    while (get_flag(TX_FIFO_FULL)) {
+        continue;
+    }
+
+    // Write character
+    XIo_Out8(UART_BASE_ADDRESS + UART_TX_FIFO + 3, c);
+
+    // fix new line
+    if (c == '\r') {
+        while (get_flag(TX_FIFO_FULL)) {
+            continue;
+        }
+        XIo_Out8(UART_BASE_ADDRESS + UART_TX_FIFO + 3, '\n');
+    }
+
 	count++;
 }
 
 int main(void) {
     init_platform();
-    printf("starting...\n");
 
-	// NOTE: Enable the UART to generate interrupts
-    int uart_ctrl = XIo_In8(UART_BASE_ADDRESS + UART_CTRL + 3);
-    uart_ctrl |= UART_INTERRUPT_ENABLED;
-    XIo_Out8(UART_BASE_ADDRESS + UART_TX_FIFO + 3, uart_ctrl);
+    // NOTE: register the interrupt
+    microblaze_register_handler((XInterruptHandler) ISR, NULL);
 
     // NOTE: Enable microblaze to respond to interrupts
     microblaze_enable_interrupts();
 
-    // NOTE: register the interrupt
-    microblaze_register_handler((XInterruptHandler) ISR, NULL);
+	// NOTE: Enable the UART to generate interrupts
+    XIo_Out32(UART_BASE_ADDRESS + UART_CTRL, UART_INTERRUPT_ENABLED);
 
 	while(1) {
         ;
@@ -75,4 +93,3 @@ int main(void) {
 	// Exit normally
 	return 0;
 }
-

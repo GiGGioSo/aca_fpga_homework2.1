@@ -26,4 +26,5 @@ configparams mdm-detect-bscan-mask 2
 targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
 dow /home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io/Debug/interrupt_io.elf
 configparams force-mem-access 0
-bpadd -addr &main
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
