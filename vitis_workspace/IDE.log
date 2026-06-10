@@ -992,3 +992,4 @@ con
 ----------------End of Script----------------
 
 17:20:03 INFO  : Launch script is exported to file '/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/interrupt_io_system/_ide/scripts/debugger_interrupt_io-default.tcl'
+17:22:38 INFO  : Disconnected from the channel tcfchan#20.
