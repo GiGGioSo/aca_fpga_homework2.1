@@ -1,0 +1,6 @@
+10:28:39 **** Incremental Build of configuration Release for project polling_io_system ****
+make all 
+Skipping SD card image generation. Reason: The system project only has applications for microblaze processors.
+
+10:28:39 Build Finished (took 109ms)
+

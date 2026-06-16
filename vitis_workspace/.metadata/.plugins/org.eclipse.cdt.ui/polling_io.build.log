@@ -1,0 +1,32 @@
+10:29:15 **** Incremental Build of configuration Debug for project polling_io ****
+make all 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/sw/hardware_interrupt/standalone_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print':
+../src/main.c:30:25: warning: comparison between pointer and integer
+   30 |     for(char *p = s; *p != NULL; p++) {
+      |                         ^~
+../src/main.c: In function 'main':
+../src/main.c:44:14: warning: unused variable 's' [-Wunused-variable]
+   44 |         char s[] = "Hello World, this is a demonstrator application for polled io!\n";
+      |              ^
+../src/main.c:42:13: warning: unused variable 'status' [-Wunused-variable]
+   42 |         u32 status = 0;
+      |             ^~~~~~
+Finished building: ../src/main.c
+ 
+Building target: polling_io.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/gio/uni/aca/fpga/aca_fpga_homework2.1/vitis_workspace/hardware_interrupt/export/hardware_interrupt/sw/hardware_interrupt/standalone_microblaze_0/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "polling_io.elf" ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: polling_io.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size polling_io.elf  |tee "polling_io.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   2088	     24	   3424	   5536	   15a0	polling_io.elf
+Finished building: polling_io.elf.size
+ 
+
+10:29:15 Build Finished (took 213ms)
+
